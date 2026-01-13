@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tebak-Tebakan Receh Ultimate</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sunburst"></div>
+    <div class="halftone-overlay"></div>
+    
+    <div class="floating-bg" id="bg-elements"></div>
+
+    <div class="phone-frame">
+        <div class="app-content">
+            
+            <canvas id="confetti"></canvas>
+
+            <div class="sound-toggle" onclick="toggleSound()" title="Matikan/Hidupkan Suara">
+                <div id="sound-icon">🔊</div>
+            </div>
+
+            <div class="feedback-overlay" id="feedback-popup">
+                MANTAP!
+                <span>+20 Poin</span>
+            </div>
+
+            <div id="screen-welcome" class="screen active">
+                <div class="welcome-box">
+                    <div class="logo-container">
+                        <div class="logo-bg"></div>
+                        <div class="logo-bounce" onclick="playSfx('pop')">🤡</div>
+                    </div>
+                    
+                    <h1 class="game-title">TEBAK<br>RECEH</h1>
+                    <div class="subtitle">EDISI ULTIMATE</div>
+                    
+                    <button class="btn-start" onclick="startGame()">GAS KAN! ▶</button>
+                    
+                    <p style="margin-top: 20px; font-size: 0.8rem; font-weight: 800; opacity: 0.6;">Made with fun by Adit</p>
+                </div>
+            </div>
+
+            <div id="screen-game" class="screen">
+                <div class="top-bar">
+                    <div class="level-info">
+                        <span style="font-size: 0.7rem; font-weight: 900; color: #999;">SOAL</span>
+                        <span style="font-size: 1.4rem; font-weight: 900; color: var(--dark);" id="q-indicator">1/5</span>
+                    </div>
+                    
+                    <div class="score-pill">
+                        ⭐ <span id="score-display" style="color: var(--dark); font-weight: 900;">0</span>
+                    </div>
+                </div>
+
+                <div class="combo-badge" id="combo-badge">COMBO x2! 🔥</div>
+
+                <div class="timer-container">
+                    <div class="timer-bar" id="timer-bar"></div>
+                </div>
+
+                <div class="question-card">
+                    <div class="mascot-game-container">
+                        <div class="mascot-reaction" id="mascot-game">🤔</div>
+                    </div>
+                    <div class="q-text" id="q-text">Loading...</div>
+                </div>
+
+                <div class="options-list" id="options-container">
+                    </div>
+            </div>
+
+            <div id="screen-result" class="screen result-screen">
+                <div style="font-size: 4rem; margin-bottom: -10px; animation: bounce 2s infinite;">🎉</div>
+                <h2 style="font-family:'Fredoka One'; color:var(--dark); -webkit-text-stroke: 1px white; font-size: 2.5rem; margin-bottom:10px;">SELESAI!</h2>
+                
+                <div class="score-circle">
+                    <span class="final-score" id="final-score">0</span>
+                    <span class="score-label">SKOR KAMU</span>
+                </div>
+
+                <div class="result-msg" id="result-msg">Kamu hebat banget!</div>
+
+                <button class="btn-start" onclick="startGame()" style="background:var(--success); color: white; margin-top: 10px;">
+                    MAIN LAGI ↺
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
